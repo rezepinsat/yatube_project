@@ -4,10 +4,8 @@ from .models import Group, Post
 
 
 def index(request):
-    posts = Post.objects.all()
-    title = 'Последние обновления на сайте'
+    posts = Post.objects.all()[:10]
     context = {
-        'title': title,
         'posts': posts,
     }
     return render(request, 'posts/index.html', context)
@@ -15,7 +13,7 @@ def index(request):
 
 def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
-    posts = Post.objects.all()
+    posts = Post.objects.all()[:10]
     context = {
         'group': group,
         'posts': posts,

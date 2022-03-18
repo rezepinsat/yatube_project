@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block title %}пример{% endblock %}
 {% block content %}
-Последнее обновление на сайте
-{% block title %}    
-{% endblock %}
       <div class="container py-5">     
-        <article>
+        <h1>Последниее обновление на сайте</h1>
           {% for post in posts %}
           <ul>
             <li>
